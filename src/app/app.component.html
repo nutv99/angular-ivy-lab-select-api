@@ -10,11 +10,13 @@
   </tr>
   <!-- <tr ng-repeat="x99 in ItemDatas"> -->
   <tr *ngFor="let hero of ItemDatas; let i = index">
-    <td>-</td>
-    <td>{{ hero.ItemName }}</td>
-    <td>{{ hero.Description }}</td>
-    <td>{{ hero.SellPrice }}</td>
-    <td><input type="text" [(ngModel)]="hero.NumOrder" (input)="CalMoney(i)" /></td>
+    <td>{{ hero[0] }}</td>
+    <td>{{ hero[1] }}</td>
+    <td>{{ hero[2] }}</td>
+    <td>{{ hero[3] }}</td>
+    <td>
+      <input type="text" [(ngModel)]="hero.NumOrder" (input)="CalMoney(i)" />
+    </td>
     <td>{{ hero.ThisMoney }}</td>
   </tr>
 </table>
