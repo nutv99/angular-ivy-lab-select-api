@@ -14,6 +14,8 @@ export class AppComponent {
   title = 'switchmap_pokemon';
   subscription?: Subscription;
 
+  heroesB: any[] = [];
+
   constructor(private http: HttpClient, private myapi: MyApiService) {
     // this.onSearchPokemons.pipe(
     //   //debounceTime(200),

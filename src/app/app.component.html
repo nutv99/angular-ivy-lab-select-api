@@ -8,7 +8,14 @@
     style="padding:10px"
   />
   <div style="height:300px;border:1px solid gray">
-    
+    <ul>
+      <li
+        *ngFor="let hero of pokemons; let i = index"
+        style="padding:10px;cursor:pointer"
+      >
+        {{ hero[0].trim() }}
+      </li>
+    </ul>
   </div>
 </div>
 
