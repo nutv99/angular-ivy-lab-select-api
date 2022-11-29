@@ -1,8 +1,15 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
 <div>
-  <input type='text' style='padding:10px'>
-  <div style='height:300px;border:1px solid gray'></div>
+  <input type="text" style="padding:10px" />
+  <div style="height:300px;border:1px solid gray"></div>
 </div>
+
+<h3>Search Pokemon</h3>
+<input #input (input)="searchPokemons(input.value)" type="text" />
+
+{{ pokemons | json }}
+
+<!-- <h3>Search Pokemon </h3>
+<input #input (input)="searchPokemons(input.value)" type="text">
+
+ {{pokemons }} -->
