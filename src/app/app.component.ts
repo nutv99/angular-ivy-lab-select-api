@@ -1,4 +1,4 @@
-import { Component, Pipe } from '@angular/core';
+import { Component, Pipe, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { MyapiService } from './myapi.service';
 import { MyApiService } from './myapi.service';
@@ -19,6 +19,8 @@ export interface ItemModel {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  @ViewChild('mTest') myNameElem: ElementRef<any>;
+
   pokemons: any[] = [];
   title = 'switchmap_pokemon';
   subscription?: Subscription;
@@ -41,6 +43,14 @@ export class AppComponent {
         console.log('Value :: ', value);
         this.pokemons = value;
       });
+  }
+
+  GetmTest() {
+    // this.myNameElem.nativeElement.value = 'AAAA';
+    // alert(this.myNameElem.nativeElement.value);
+    alert(this.myNameElem.nativeElement.rows.length);
+    this.myNameElem.nativeElement.rows[1].cells[1].innerHTML =
+      '<input type="text"  value="" style="border:1px solid gray" />';
   }
 
   //  constructor(

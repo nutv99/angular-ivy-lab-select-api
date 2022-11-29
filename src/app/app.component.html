@@ -1,5 +1,7 @@
 <p>Start editing to see some magic happen :)</p>
-<table style="width:100%" border="1" [(ngModel)]="ItemDatas">
+<input type="text"  value="" style="border:1px solid gray" />
+<button (click)="GetmTest()">Get mTest</button>
+<table style="width:100%" border="1" #mTest [(ngModel)]="ItemDatas">
   <tr>
     <td>ลำดับ</td>
     <td>ชื่อสินค้า</td>
