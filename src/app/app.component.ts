@@ -41,15 +41,15 @@ export class AppComponent {
 
   searchPokemons(searchText: string) {
     //  วิธีที่ 1
-    if (this.subscription) {
-      console.log('UnSubscribe');
-      this.subscription.unsubscribe();
-    }
-    this.subscription = this.myapi
-      .getPokemonByName(searchText)
-      .subscribe((response) => (this.pokemons = response));
-    //alert(searchText);
+    // if (this.subscription) {
+    //   console.log('UnSubscribe');
+    //   this.subscription.unsubscribe();
+    // }
+    // this.subscription = this.myapi
+    //   .getPokemonByName(searchText)
+    //   .subscribe((response) => (this.pokemons = response));
+    // //alert(searchText);
     // วิธีที่ 2  switchMap
-    //this.onSearchPokemons.next(searchText);
+    this.onSearchPokemons.next(searchText);
   }
 }
