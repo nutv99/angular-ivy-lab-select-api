@@ -7,8 +7,10 @@ import { Subscription, Subject, switchMap, debounceTime, pipe } from 'rxjs';
 export interface ItemModel {
   ItemID: number;
   ItemName: string;
-  Desc: string;
+  Description: string;
   SellPrice: number;
+  NumOrder: number;
+  ThisMoney: number;
 }
 
 @Component({
@@ -73,5 +75,14 @@ export class AppComponent {
     //alert(i);
     console.log(this.pokemons[i]);
     this.ItemDatas.push(this.pokemons[i]);
+  }
+
+  CalMoney(i: number) {
+    let NumOrder = this.ItemDatas[i].NumOrder;
+    let SellPrice = this.ItemDatas[i].SellPrice;
+
+    this.ItemDatas[i].ThisMoney = NumOrder * SellPrice;
+
+    //alert(this.ItemDatas[i].NumOrder);
   }
 }
