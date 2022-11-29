@@ -8,7 +8,7 @@ export interface ItemModel {
   ItemID: number;
   ItemName: string;
   Desc: string;
-  ItemPrice: number;
+  SellPrice: number;
 }
 
 @Component({
@@ -21,7 +21,7 @@ export class AppComponent {
   title = 'switchmap_pokemon';
   subscription?: Subscription;
 
-  ItemData: ItemModel[] = [];
+  ItemDatas: ItemModel[] = [];
 
   heroesB: any[] = [];
 
@@ -72,6 +72,6 @@ export class AppComponent {
   AddItem(i: number) {
     //alert(i);
     console.log(this.pokemons[i]);
-    this.ItemData.push(this.pokemons[i]);
+    this.ItemDatas.push(this.pokemons[i]);
   }
 }

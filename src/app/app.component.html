@@ -1,4 +1,19 @@
 <p>Start editing to see some magic happen :)</p>
+<table style="width:100%" border="1" [(ngModel)]="ItemDatas">
+  <tr>
+    <td>ลำดับ</td>
+    <td>ชื่อสินค้า</td>
+    <td>รายละเอียด</td>
+    <td>ราคา</td>
+  </tr>
+  <!-- <tr ng-repeat="x99 in ItemDatas"> -->
+  <tr *ngFor="let hero of ItemDatas; let i = index">
+    <td>-</td>
+    <td>{{ hero.Desc }}</td>
+    <td>{{ hero.ItemName }}</td>
+    <td>{{ hero.SellPrice }}</td>
+  </tr>
+</table>
 <div>
   <!-- <input type="text" style="padding:10px" /> -->
   <form>
@@ -30,7 +45,7 @@
   </div>
 </div>
 
-{{ ItemData | json }}
+{{ ItemDatas | json }}
 
 <h3>Table3 demo</h3>
 <app-table3></app-table3>
