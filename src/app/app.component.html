@@ -15,30 +15,22 @@
     </label>
   </form>
   <div
-    style="margin-top:0px;height:300px;border:1px solid gray;overflow:scroll"
+    style="margin-top:0px;height:100px;border:1px solid gray;overflow-y:scroll"
   >
     <div>พบจำนวน :: {{ pokemons.length }}</div>
     <ul>
       <li
         *ngFor="let hero of pokemons; let i = index"
         style="padding:10px;cursor:pointer"
+        (click)="AddItem(i)"
       >
-        {{ hero[0].trim() }}
+        {{ hero[1].trim() }}
       </li>
     </ul>
   </div>
 </div>
 
-<h3>Search Pokemon</h3>
-<label for="name">
-  <input type="text" id="name" placeholder="Name" />
-  <span>Name</span>
-</label>
-<!-- <input #input (input)="searchPokemons(input.value)" type="text" /> -->
+{{ ItemData | json }}
 
-<!-- {{ pokemons | json }} -->
-
-<!-- <h3>Search Pokemon </h3>
-<input #input (input)="searchPokemons(input.value)" type="text">
-
- {{pokemons }} -->
+<h3>Table3 demo</h3>
+<app-table3></app-table3>

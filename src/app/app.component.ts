@@ -4,6 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { MyApiService } from './myapi.service';
 import { Subscription, Subject, switchMap, debounceTime, pipe } from 'rxjs';
 
+export interface ItemModel {
+  ItemID: number;
+  ItemName: string;
+  Desc: string;
+  ItemPrice: number;
+}
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -13,6 +20,8 @@ export class AppComponent {
   pokemons: any[] = [];
   title = 'switchmap_pokemon';
   subscription?: Subscription;
+
+  ItemData: ItemModel[] = [];
 
   heroesB: any[] = [];
 
@@ -58,5 +67,11 @@ export class AppComponent {
     // //alert(searchText);
     // วิธีที่ 2  switchMap
     this.onSearchPokemons.next(searchText);
+  }
+
+  AddItem(i: number) {
+    //alert(i);
+    console.log(this.pokemons[i]);
+    this.ItemData.push(this.pokemons[i]);
   }
 }
