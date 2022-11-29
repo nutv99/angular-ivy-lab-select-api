@@ -17,12 +17,19 @@ export class AppComponent {
   heroesB: any[] = [];
 
   constructor(private http: HttpClient, private myapi: MyApiService) {
-    // this.onSearchPokemons.pipe(
-    //   //debounceTime(200),
-    //   switchMap(searchText =>{
-    //   //return this.myapiservice.getPokemonByName(searchText)
-    //   console.log('aaa' + searchText)
-    // })).subscribe(value=>console.log(value));
+    this.onSearchPokemons
+      .pipe(
+        debounceTime(200),
+
+        switchMap((searchText) => {
+          return this.myapi.getPokemonByName(searchText);
+          console.log('aaa' + searchText);
+        })
+      )
+      .subscribe((value) => {
+        console.log('Value :: ', value);
+        this.pokemons = value;
+      });
   }
 
   //  constructor(

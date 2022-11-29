@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class MyApiService {
   thisURL: string = '';
+  pokemonsEmpty: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   public getPokemonByName(sname: string) {
+    // if (sname.trim() === '') {
+    //   //alert('Empty') ;
+    //   return this.pokemonsEmpty;
+    // }
     this.thisURL =
       'https://lovetoshopmall.com/dataservice/getItem.php?item=' + sname;
     return this.http.get<any>(this.thisURL);

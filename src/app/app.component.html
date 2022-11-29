@@ -1,13 +1,23 @@
 <p>Start editing to see some magic happen :)</p>
 <div>
   <!-- <input type="text" style="padding:10px" /> -->
-  <input
-    #input
-    (input)="searchPokemons(input.value)"
-    type="text"
-    style="padding:10px"
-  />
-  <div style="height:300px;border:1px solid gray">
+  <form>
+    <label for="searchText99">
+      <input
+        #input
+        (input)="searchPokemons(input.value)"
+        type="text"
+        id="searchText99"
+        style="padding:10px"
+        placeholder="ชื่อสินค้า"
+      />
+      <span>ชื่อสินค้า</span>
+    </label>
+  </form>
+  <div
+    style="margin-top:0px;height:300px;border:1px solid gray;overflow:scroll"
+  >
+    <div>พบจำนวน :: {{ pokemons.length }}</div>
     <ul>
       <li
         *ngFor="let hero of pokemons; let i = index"
@@ -20,9 +30,13 @@
 </div>
 
 <h3>Search Pokemon</h3>
+<label for="name">
+  <input type="text" id="name" placeholder="Name" />
+  <span>Name</span>
+</label>
 <!-- <input #input (input)="searchPokemons(input.value)" type="text" /> -->
 
-{{ pokemons | json }}
+<!-- {{ pokemons | json }} -->
 
 <!-- <h3>Search Pokemon </h3>
 <input #input (input)="searchPokemons(input.value)" type="text">
