@@ -1,4 +1,13 @@
-import { Component, OnInit, Pipe, ViewChild, ElementRef,Input,Output,EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Pipe,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { MyapiService } from './myapi.service';
 import { MyApiService } from '../myapi.service';
@@ -18,13 +27,12 @@ export interface ItemModel {
   templateUrl: './txtsearch.component.html',
   styleUrls: ['./txtsearch.component.css'],
 })
-export class TxtsearchComponent implements OnInit { 
-
+export class TxtsearchComponent implements OnInit {
   @Output() myListChange: EventEmitter<string> = new EventEmitter();
 
   showListText: boolean = true;
-  showListText2: boolean = false; 
-  txtSearch : string = '999' ;
+  showListText2: boolean = false;
+  txtSearch: string = '';
   pokemons: any[] = [];
   title = 'switchmap_pokemon';
   subscription?: Subscription;
@@ -69,11 +77,10 @@ export class TxtsearchComponent implements OnInit {
   AddItem(i: number) {
     //alert(i);
     console.log(this.pokemons[i]);
-    this.txtSearch = '' ;
+    this.txtSearch = '';
     this.ItemDatas.push(this.pokemons[i]);
     this.myListChange.emit(this.pokemons[i]);
     this.showListText2 = false;
-    
   }
 
   CalMoney(i: number) {
