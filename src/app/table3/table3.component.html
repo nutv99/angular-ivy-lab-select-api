@@ -1,12 +1,6 @@
 <p>table3 works!</p>
 
-<!-- <table
-  #tblMain
-  id="tblMain"
-  style="width:100%"
-  border="1"
-  [(ngModel)]="tblModel"
->
+<table style="width:100%" border="1" [(ngModel)]="tblModel">
   <tr>
     <td>ลำดับ</td>
     <td>ชื่อสินค้า</td>
@@ -14,20 +8,33 @@
     <td>ราคา</td>
     <td>จำนวน</td>
     <td>เป็นเงิน</td>
-  </tr>  
+  </tr>
   <tr *ngFor="let hero of tblModel; let i = index">
     <td>-</td>
     <td>{{ hero.ItemName }}</td>
     <td>{{ hero.Description }}</td>
     <td>{{ hero.SellPrice }}</td>
     <td>
-      <input type="text" [(ngModel)]="hero.NumOrder" />
+      <input type="text" (input)="CalMoney(i)" [(ngModel)]="hero.NumOrder" />
     </td>
     <td>{{ hero.ThisMoney }}</td>
   </tr>
-</table> -->
 
-<table style="width:100%;margin-top:50px" border="1">
+  <tr>
+    <td>-</td>
+    <td>
+      <app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch>
+    </td>
+    <td></td>
+    <td></td>
+    <td>
+      <input type="text" />
+    </td>
+    <td></td>
+  </tr>
+</table>
+
+<!-- <table style="width:100%;margin-top:50px" border="1" [(ngModel)]="tblModel">
   <tr>
     <td>ลำดับ</td>
     <td>ชื่อสินค้า</td>
@@ -36,9 +43,7 @@
   </tr>
   <tr>
     <td>1</td>
-    <td style="width:300px;">
-      <app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch>
-    </td>
+    <td style="width:300px;"></td>
     <td></td>
     <td></td>
   </tr>
@@ -48,5 +53,6 @@
     <td></td>
     <td></td>
   </tr>
-</table>
+</table> -->
+<app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch>
 <!-- <app-txtsearch></app-txtsearch> -->

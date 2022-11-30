@@ -1,5 +1,5 @@
 <p>Start editing to see some magic happen :)</p>
-<table style="width:100%" border="1" [(ngModel)]="ItemDatas">
+<!-- <table style="width:100%" border="1" [(ngModel)]="ItemDatas">
   <tr>
     <td>ลำดับ</td>
     <td>ชื่อสินค้า</td>
@@ -8,7 +8,7 @@
     <td>จำนวน</td>
     <td>เป็นเงิน</td>
   </tr>
-  <!-- <tr ng-repeat="x99 in ItemDatas"> -->
+  
   <tr *ngFor="let hero of ItemDatas; let i = index">
     <td>-</td>
     <td>{{ hero.ItemName }}</td>
@@ -19,10 +19,10 @@
     </td>
     <td>{{ hero.ThisMoney }}</td>
   </tr>
-</table>
+</table> -->
 <div>
   <!-- <input type="text" style="padding:10px" /> -->
-  <div style="width:300px;background:red;padding:10px" *ngIf ="showListText">
+  <div style="width:300px;background:red;padding:10px" *ngIf="showListText">
     <form style="width:100%;">
       <label for="searchText99">
         <input

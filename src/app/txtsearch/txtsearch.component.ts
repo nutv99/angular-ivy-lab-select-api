@@ -29,14 +29,12 @@ export class TxtsearchComponent implements OnInit {
   subscription?: Subscription;
 
   ItemDatas: ItemModel[] = [];
-
   heroesB: any[] = [];
 
   constructor(private http: HttpClient, private myapi: MyApiService) {
     this.onSearchPokemons
       .pipe(
         debounceTime(200),
-
         switchMap((searchText) => {
           return this.myapi.getPokemonByName(searchText);
           console.log('aaa' + searchText);
