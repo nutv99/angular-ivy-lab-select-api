@@ -155,5 +155,6 @@ body {
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4 {
   display: block;
+  border: 1px solid ddd;
   /* box-shadow: 0 0 15px #939393; */
 }
