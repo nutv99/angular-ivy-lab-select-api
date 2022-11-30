@@ -51,4 +51,10 @@ export class Table3Component implements OnInit {
 
     //alert(this.ItemDatas[i].NumOrder);
   }
+  
+  RemoveItem(i :number) { 
+
+    this.tblModel.splice(i,1) ;
+
+  }
 }
