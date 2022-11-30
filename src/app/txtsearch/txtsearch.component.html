@@ -1,15 +1,14 @@
 <!-- <input type="text" style="padding:10px" /> -->
 <div style="width:275px;" *ngIf="showListText">
-  <form style="width:100%;">
-    <input
-      #input
-      (input)="searchPokemons(input.value)"
-      type="text"
-      id="searchText99"
-      style="padding:10px;width:100%;border:none"
-      placeholder="ค้นชื่อสินค้า"
-    />
-  </form>
+  <input
+    #input
+    (input)="searchPokemons(input.value)"
+    type="text"
+    [(ngModel)]="txtSearch"
+    style="padding:10px;width:100%;border:none"
+    placeholder="พิมพ์ค้นชื่อสินค้าที่จะเพิ่ม"
+  />
+
   <div
     *ngIf="showListText2"
     style="position:absolute;width:100%;margin-top:0px;height:300px;border:1px solid gray;overflow-y:scroll;background:white;z-index:1000000"

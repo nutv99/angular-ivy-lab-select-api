@@ -40,6 +40,7 @@ export class Table3Component implements OnInit {
   AcceptTableData(e: any) {
     console.log('Emit Accept' + e[0]);
     this.tblModel.push(e);
+   
   }
 
   CalMoney(i: number) {

@@ -15,7 +15,7 @@
     <td>{{ hero.Description }}</td>
     <td>{{ hero.SellPrice }}</td>
     <td>
-      <input type="text" (input)="CalMoney(i)" [(ngModel)]="hero.NumOrder" />
+      <input type="text" (input)="CalMoney(i)" [(ngModel)]="hero.NumOrder"  style='width:99%'/>
     </td>
     <td>{{ hero.ThisMoney }}</td>
   </tr>
@@ -52,5 +52,5 @@
     <td></td>
   </tr>
 </table> -->
-<app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch>
+<!-- <app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch> -->
 <!-- <app-txtsearch></app-txtsearch> -->
