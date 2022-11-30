@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { Table3Component } from './table3/table3.component';
 
+import { TxtsearchComponent } from './txtsearch/txtsearch.component';
+
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
-  declarations: [AppComponent, HelloComponent,Table3Component],
+  declarations: [AppComponent, HelloComponent,Table3Component,TxtsearchComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

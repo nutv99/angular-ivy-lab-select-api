@@ -1,7 +1,5 @@
 <p>Start editing to see some magic happen :)</p>
-<input type="text"  value="" style="border:1px solid gray" />
-<button (click)="GetmTest()">Get mTest</button>
-<table style="width:100%" border="1" #mTest [(ngModel)]="ItemDatas">
+<table style="width:100%" border="1" [(ngModel)]="ItemDatas">
   <tr>
     <td>ลำดับ</td>
     <td>ชื่อสินค้า</td>
@@ -12,10 +10,10 @@
   </tr>
   <!-- <tr ng-repeat="x99 in ItemDatas"> -->
   <tr *ngFor="let hero of ItemDatas; let i = index">
-    <td>{{ hero[0] }}</td>
-    <td>{{ hero[1] }}</td>
-    <td>{{ hero[2] }}</td>
-    <td>{{ hero[3] }}</td>
+    <td>-</td>
+    <td>{{ hero.ItemName }}</td>
+    <td>{{ hero.Description }}</td>
+    <td>{{ hero.SellPrice }}</td>
     <td>
       <input type="text" [(ngModel)]="hero.NumOrder" (input)="CalMoney(i)" />
     </td>
@@ -24,36 +22,39 @@
 </table>
 <div>
   <!-- <input type="text" style="padding:10px" /> -->
-  <form>
-    <label for="searchText99">
-      <input
-        #input
-        (input)="searchPokemons(input.value)"
-        type="text"
-        id="searchText99"
-        style="padding:10px"
-        placeholder="ชื่อสินค้า"
-      />
-      <span>ชื่อสินค้า</span>
-    </label>
-  </form>
-  <div
-    style="margin-top:0px;height:300px;border:1px solid gray;overflow-y:scroll"
-  >
-    <div>พบจำนวน :: {{ pokemons.length }}</div>
-    <ul>
-      <li
-        *ngFor="let hero of pokemons; let i = index"
-        style="padding:10px;cursor:pointer"
-        (click)="AddItem(i)"
-      >
-        {{ hero[1].trim() }}
-      </li>
-    </ul>
+  <div style="width:300px;background:red;padding:10px" *ngIf ="showListText">
+    <form style="width:100%;">
+      <label for="searchText99">
+        <input
+          #input
+          (input)="searchPokemons(input.value)"
+          type="text"
+          id="searchText99"
+          style="padding:10px;width:100%"
+          placeholder="ชื่อสินค้า"
+        />
+        <span>ชื่อสินค้า</span>
+      </label>
+    </form>
+    <div
+      style="margin-top:0px;height:300px;border:1px solid gray;overflow-y:scroll"
+    >
+      <div>พบจำนวน :: {{ pokemons.length }}</div>
+      <ul>
+        <li
+          *ngFor="let hero of pokemons; let i = index"
+          style="padding:10px;cursor:pointer"
+          (click)="AddItem(i)"
+        >
+          {{ hero[1].trim() }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <!-- {{ ItemDatas | json }} -->
+
+    <h3>Table3 demo</h3>
+    <app-table3></app-table3>
   </div>
 </div>
-
-<!-- {{ ItemDatas | json }} -->
-
-<h3>Table3 demo</h3>
-<app-table3></app-table3>

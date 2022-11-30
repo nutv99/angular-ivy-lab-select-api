@@ -1,7 +1,7 @@
-import { Component, Pipe, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Pipe, ViewChild, ElementRef,Input,Output,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { MyapiService } from './myapi.service';
-import { MyApiService } from './myapi.service';
+import { MyApiService } from '../myapi.service';
 import { Subscription, Subject, switchMap, debounceTime, pipe } from 'rxjs';
 
 export interface ItemModel {
@@ -14,17 +14,19 @@ export interface ItemModel {
 }
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-txtsearch',
+  templateUrl: './txtsearch.component.html',
+  styleUrls: ['./txtsearch.component.css'],
 })
-export class AppComponent {
-  @ViewChild('mTest') myNameElem: ElementRef<any>;
+export class TxtsearchComponent implements OnInit { 
 
+  @Output() myListChange: EventEmitter<string> = new EventEmitter();
+
+  showListText: boolean = true;
+  showListText2: boolean = false;
   pokemons: any[] = [];
   title = 'switchmap_pokemon';
   subscription?: Subscription;
-  showListText: boolean = false;
 
   ItemDatas: ItemModel[] = [];
 
@@ -46,25 +48,7 @@ export class AppComponent {
       });
   }
 
-  GetmTest() {
-    // this.myNameElem.nativeElement.value = 'AAAA';
-    // alert(this.myNameElem.nativeElement.value);
-    alert(this.myNameElem.nativeElement.rows.length);
-    this.myNameElem.nativeElement.rows[1].cells[1].innerHTML =
-      '<input type="text"  value="" style="border:1px solid gray" />';
-  }
-
-  //  constructor(
-  //   private PokemonsKalosService : PokemonsKalosService
-  //   )
-  //    {
-
-  //      this.onSearchPokemons.pipe(
-  //        //debounceTime(200),
-  //        switchMap(searchText=>{
-  //        return this.PokemonsKalosService.getPokemonByName(searchText)
-  //      })).subscribe(value=>console.log(value));
-  //   }
+  ngOnInit() {}
 
   onSearchPokemons = new Subject<string>();
 
@@ -80,12 +64,15 @@ export class AppComponent {
     // //alert(searchText);
     // วิธีที่ 2  switchMap
     this.onSearchPokemons.next(searchText);
+    this.showListText2 = true;
   }
 
   AddItem(i: number) {
     //alert(i);
     console.log(this.pokemons[i]);
     this.ItemDatas.push(this.pokemons[i]);
+    this.myListChange.emit(this.pokemons[i]);
+    this.showListText2 = false;
   }
 
   CalMoney(i: number) {

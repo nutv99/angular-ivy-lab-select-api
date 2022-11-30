@@ -1,0 +1,22 @@
+.mTable {
+  border: 1px solid lightgray;
+}
+.mTable td {
+  padding: 5px;
+}
+
+.mTable tr:nth-child(even) {
+  background: #ccc;
+}
+.mTable tr:nth-child(odd) {
+  background: #fff;
+}
+.mTable tr:hover {
+  background-color: #dae4f0;
+}
+.captionTableSearch {
+  background-color: #01579b ;
+  color: white;
+  height: 35px;
+  padding: 10px;
+}

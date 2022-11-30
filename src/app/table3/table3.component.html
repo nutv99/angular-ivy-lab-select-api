@@ -8,7 +8,9 @@
   </tr>
   <tr>
     <td>1</td>
-    <td><input type="text" /></td>
+    <td style="width:300px;">
+      <app-txtsearch (myListChange)="AcceptTableData($event)"></app-txtsearch>
+    </td>
     <td></td>
     <td></td>
   </tr>
@@ -19,3 +21,4 @@
     <td></td>
   </tr>
 </table>
+<!-- <app-txtsearch></app-txtsearch> -->
