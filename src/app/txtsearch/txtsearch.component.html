@@ -13,10 +13,10 @@
     *ngIf="showListText2"
     style="position:absolute;width:100%;margin-top:0px;height:300px;border:1px solid gray;overflow-y:scroll;background:white;z-index:1000000"
   >
-    <div class="captionTableSearch">
+    <div class="captionTableSearch" style="position:fixed;width:100%">
       พบจำนวน :: {{ pokemons.length }} รายการ
     </div>
-    <table class="mTable">
+    <table class="mTable" style="margin-top:80px">
       <tr
         *ngFor="let hero of pokemons; let i = index"
         style="padding:10px;cursor:pointer"
