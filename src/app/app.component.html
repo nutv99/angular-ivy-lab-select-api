@@ -1,101 +1,44 @@
 <p>Start editing to see some magic happen :)</p>
 
-<button
-  type="button"
-  class="btn btn-primary me-5"
-  data-bs-toggle="modal"
-  data-bs-target="#exampleModal"
->
-  User Login
-</button>
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Column 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+  <div class="col-sm-4">
+    <h3>Column 2</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+  <div class="col-sm-4">
+    <h3>Column 3</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+</div>
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-danger" id="exampleModalLabel">
-          Login Form
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <button type="button" class="btn btn-primary">Login</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
+ 
+<!-- Modal -->
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+   
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
   </div>
-</div>
-<!-- Modal 2 with validation-->
-<div
-  class="modal fade"
-  id="exampleModal2"
-  tabindex="-1"
-  aria-labelledby="exampleModal2Label"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-danger" id="exampleModal2Label">
-          Login Form
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">sssssss</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
+  <div class="modal-body">
+    This is example from ItSolutionStuff.com
   </div>
-</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+ 
+ 
 
 <div class="tabinator">
   <h2>CSS tabs with shadow</h2>
