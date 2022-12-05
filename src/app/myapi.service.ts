@@ -13,7 +13,7 @@ export class MyApiService {
 
   public getPokemonByName(sname: string) {
     // if (sname.trim() === '') {
-    //   //alert('Empty') ;
+    //   //alert('Empty99999') ;
     //   return this.pokemonsEmpty;
     // }
     this.thisURL =
