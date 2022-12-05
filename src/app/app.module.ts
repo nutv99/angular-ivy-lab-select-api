@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import { MixformModule } from './mixform/mixform.module';
    
 
 import { AppComponent } from './app.component';
@@ -14,7 +16,7 @@ import { TxtsearchComponent } from './txtsearch/txtsearch.component';
 
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, HttpClientModule, NgbModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, NgbModule,MixformModule],
   declarations: [AppComponent, HelloComponent,Table3Component,TxtsearchComponent],
   bootstrap: [AppComponent],
 })

@@ -4,6 +4,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 // import { MyapiService } from './myapi.service';
 import { MyApiService } from './myapi.service';
 import { Subscription, Subject, switchMap, debounceTime, pipe } from 'rxjs';
+import {Test1Component} from './test1/test1.component' ;
+
 
 export interface ItemModel {
   ItemID: number;
