@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Test1Component } from '../test1/test1.component' ;
+import { ROUTES } from '@angular/router';
 
 
 @NgModule({
@@ -10,4 +11,5 @@ import { Test1Component } from '../test1/test1.component' ;
   declarations: [Test1Component],
   exports: [Test1Component],
 })
-export class MixformModule { }
+export class MixformModule { } 
+
