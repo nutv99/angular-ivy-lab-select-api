@@ -21,6 +21,8 @@ export interface ItemModel {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
+
 export class AppComponent {
   @ViewChild('mTest') myNameElem: ElementRef<any>; 
 
